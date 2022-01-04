@@ -4,6 +4,10 @@ build-job:
     - tvk-home
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
+    - ls -la .
+    - ./install-tools.sh
+    - ls -la ~/.
+    - bash source  ~/spresenseenv/setup
 
 test-job1:
   stage: test
