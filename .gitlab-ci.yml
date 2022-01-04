@@ -4,7 +4,7 @@ build-job:
     - tvk-home
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
-    - bash source spresense_env.sh
+    - source spresense_env.sh
     - spresense tools/config.py examples/hello
     - spresense make
 
