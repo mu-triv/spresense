@@ -35,15 +35,15 @@ class SerialExpect:
         return self.fdpexpect.expect_exact(match, timeout)
 
     def write(self, s):
-        self._serial.write(f"{s}\n".encode())
+        self._serial.write(f"{s}\r\n".encode())
     
 def test_hello():
 	dev_ttyusb = '/dev/ttyUSB0'
 	ser = SerialExpect(device_name=dev_ttyusb, log_filename="test.log", baudrate=115200)
 	ser.connect()
-	ser.write("\r\n")
+	ser.write("")
 	ser.expect_exact("nsh>", timeout=30)
-	ser.write("hello\r\n")
+	ser.write("hello")
 	ser.expect_exact("Hello, World", timeout=30)
 	ser.disconnect()
 
