@@ -17,5 +17,9 @@ build-job:
     - spresense make
     - sdk/tools/flash.sh -l firmware/spresense -c /dev/ttyUSB0 -b 500000
     - sdk/tools/flash.sh -l sdk/nuttx.spk -c /dev/ttyUSB0 -b 500000
-
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME-nuttx_spk"
+    paths:
+      - sdk/nuttx.spk
+    expire_in: 1 week
 
