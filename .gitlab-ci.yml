@@ -33,5 +33,5 @@ test-job:
   script:
     - apt-get update || true
     - apt-get install -y python3-pip
-    - python3 -m pip install -y pytest
+    - python3 -m pip install pytest
     - pytest spresense/ci_tests/
