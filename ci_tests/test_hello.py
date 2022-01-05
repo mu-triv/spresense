@@ -41,7 +41,9 @@ def test_hello():
 	dev_ttyusb = '/dev/ttyUSB0'
 	ser = SerialExpect(device_name=dev_ttyusb, log_filename="test.log", baudrate=115200)
 	ser.connect()
-	ser.write("hello")
+	ser.write("\r\n")
+	ser.expect_exact("nsh>", timeout=30)
+	ser.write("hello\r\n")
 	ser.expect_exact("Hello, World", timeout=30)
 	ser.disconnect()
 
