@@ -26,9 +26,12 @@ build-job:
 
 test-job:
   stage: test
+  tags:
+    - tvk-home
   dependencies:
     - build-job
   script:
+    - apt-get update
     - apt-get install python3-pip
     - python3 -m pip install -y pytest
     - pytest spresense/ci_tests/
