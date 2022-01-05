@@ -10,8 +10,8 @@ build-job:
     - id
     - alias spresense='docker run --rm -it -u `id -u`:`id -g`  -v '"`pwd`:/spresense -w /spresense/sdk $DEVENV_REPO"
     - type spresense
-    - spresense make distclean
-
+    - spresense tools/config.py examples/hello
+    
 
 
 
