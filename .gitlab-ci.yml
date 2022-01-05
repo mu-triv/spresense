@@ -1,6 +1,7 @@
 build-job:
   variables:
     DEVENV_REPO: devworldsony/spresense-sdk-env:latest
+    GIT_SUBMODULE_STRATEGY: recursive
   stage: build
   tags:
     - tvk-home
