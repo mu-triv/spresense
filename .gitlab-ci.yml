@@ -6,8 +6,9 @@ build-job:
     - tvk-home
   script:
     - docker pull $DEVENV_REPO
-    - docker run --rm -it -u `id -u`:`id -g`  -v "`pwd`:/spresense -w /spresense/sdk $DEVENV_REPO" tools/config.py examples/hello
-    - ls
+    - shopt -s expand_aliases
+    - alias spresense='docker run --rm -it -u `id -u`:`id -g`  -v '"`pwd`:/spresense -w /spresense/sdk $DEVENV_REPO"
+    - type spresense
 
 
 
