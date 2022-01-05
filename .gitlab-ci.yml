@@ -26,5 +26,7 @@ build-job:
 
 test-job:
   stage: test
+  dependencies:
+    - build-job
   script:
     - pytest spresense/ci_tests/
