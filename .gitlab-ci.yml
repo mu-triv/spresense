@@ -1,10 +1,13 @@
 build-job:
+  variables:
+    DEVENV_REPO: devworldsony/spresense-sdk-env
   stage: build
   tags:
     - tvk-home
+  image: devworldsony/spresense-sdk-env
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
-    - source spresense_env.sh && spresense ./tools/flash.sh -e /spresense/firmware/spresense/spresense-binaries-v2.4.0.zip
+    - ls
     # - spresense tools/config.py examples/hello
     # - spresense make distclean
     # - spresense tools/config.py examples/hello
