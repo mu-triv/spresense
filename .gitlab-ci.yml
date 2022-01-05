@@ -29,5 +29,6 @@ test-job:
   dependencies:
     - build-job
   script:
+    - apt-get install python3-pip
     - python3 -m pip install -y pytest
     - pytest spresense/ci_tests/
