@@ -6,8 +6,7 @@ build-job:
     - tvk-home
   image:
     name: $DEVENV_REPO
-    entrypoint:
-      - [""]
+    entrypoint: [""]
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
     - ls
