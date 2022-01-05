@@ -4,7 +4,10 @@ build-job:
   stage: build
   tags:
     - tvk-home
-  image: devworldsony/spresense-sdk-env
+  image:
+    name: $DEVENV_REPO
+    entrypoint:
+      - [""]
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
     - ls
