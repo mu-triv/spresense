@@ -15,5 +15,7 @@ build-job:
     - spresense tools/flash.sh -e /spresense/firmware/spresense/spresense-binaries-v2.4.0.zip
     - spresense tools/config.py examples/hello
     - spresense make
-    
+    - sdk/tools/flash.sh -l firmware/spresense -c /dev/ttyUSB0 -b 500000
+    - sdk/tools/flash.sh -l sdk/nuttx.spk -c /dev/ttyUSB0 -b 500000
+
 
