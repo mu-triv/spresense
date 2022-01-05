@@ -1,4 +1,4 @@
- 
+from os import environ
 from pexpect import fdpexpect
 from serial import Serial
 
@@ -38,7 +38,7 @@ class SerialExpect:
         self._serial.write(f"{s}\r\n".encode())
     
 def test_hello():
-	dev_ttyusb = '/dev/ttyUSB0'
+	dev_ttyusb = environ.get("DEV_PORT", "/dev/ttyUSB0") # None
 	ser = SerialExpect(device_name=dev_ttyusb, log_filename="test.log", baudrate=115200)
 	ser.connect()
 	ser.write("")
